@@ -9,7 +9,7 @@ export const GridCharacters = ({character}) => {
             character.map((char) => (
                 <div key={char.id} className='card'>
                 <h1 className='d-flex justify-content-center'>{char.name}</h1>
-                <img src={`${char.thumbnail.path}.${char.thumbnail.extension}`}></img>
+                <img src={`${char.thumbnail.path}.${char.thumbnail.extension}`} alt='no'></img>
                 </div>
             ))}
         </div>
