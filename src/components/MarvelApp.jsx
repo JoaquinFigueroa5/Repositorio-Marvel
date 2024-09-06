@@ -6,7 +6,7 @@ import { GridCharacters } from "./GridCharacters";
 import { SearchCharacter } from "./SearchCharacter";
 
 export const MarvelApp = () => {
-  const [currentpage, setCurrentpage] = useState()
+  const [currentpage, setCurrentpage] = useState(1)
   const [searchCharacter, setSearchCharacter] = useState("");
   const { characters, total } = useCharacters(currentpage, searchCharacter);
  
@@ -18,7 +18,7 @@ export const MarvelApp = () => {
     <>
         <SearchCharacter onSearch={handleSearch}/>
         <GridCharacters characters={characters}/>
-        <Pagination className="d-flex justify-content-center" count={Math.round(total/20)} onChange={(e, value) => (setPagina(value))}/>
+        <Pagination className="d-flex justify-content-center" count={Math.round(total/20)} onChange={(e, value) => (setCurrentpage(value))}/>
     </>
   )
 }

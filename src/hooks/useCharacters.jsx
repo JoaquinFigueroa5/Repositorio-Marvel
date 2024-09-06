@@ -12,6 +12,7 @@ export const useCharacters = (currentpage, searchCharacter) => {
     reqCharacter(currentpage, searchCharacter).then((data)=>{
         setCharacters(data.results)
         setTotal(data.total)
+        console.log(data)
     })
   }, [currentpage, searchCharacter]);
  
